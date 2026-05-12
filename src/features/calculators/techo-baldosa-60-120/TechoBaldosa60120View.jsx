@@ -109,10 +109,20 @@ export function TechoBaldosa60120View() {
   const tilesNeeded = Math.ceil(areaWithWaste / (TILE_LENGTH * TILE_WIDTH));
 
   const shareWhatsApp = () => {
+    const divider = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
+    const materials = results ? Object.entries(results).map(([k, v]) => `• ${k}: ${v} uds`).join('\n') : 'Sin resultados';
     const text = [
-      'Techo baldosa 60×120 — ' + netArea.toFixed(2) + ' m²',
-      'Con ' + wastePct + '% desperdicio',
-      results ? Object.entries(results).map(([k, v]) => k + ': ' + v).join(', ') : 'Sin resultados',
+      '📋 CÁLCULO DE MATERIALES - METALDRYLL',
+      divider,
+      `🏠 Tipo: Techo Baldosa 60×120 cm`,
+      `📐 Dimensiones: ${length.toFixed(2)}m x ${width.toFixed(2)}m = ${netArea.toFixed(2)} m²`,
+      `📊 Desperdicio: ${wastePct}%`,
+      divider,
+      '📦 MATERIALES:',
+      materials,
+      divider,
+      '✨ Generado con Calculadora MetalDryll',
+      'https://drywalll-peru-calculadora.netlify.app/',
     ].join('\n');
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   };

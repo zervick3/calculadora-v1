@@ -74,10 +74,20 @@ export function TabiqueSanitarioRhView() {
   const results = useMemo(() => calcTabiqueSanitarioRh(area * (1 + wastePct / 100)), [area, wastePct]);
 
   const shareWhatsApp = () => {
+    const divider = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
+    const materials = results ? Object.entries(results).map(([k, v]) => `• ${k}: ${v} uds`).join('\n') : 'Sin resultados';
     const text = [
-      'Tabique Sanitario RH — ' + area + ' m²',
-      'Con ' + wastePct + '% desperdicio',
-      results ? Object.entries(results).map(([k, v]) => k + ': ' + v).join(', ') : 'Sin resultados',
+      '📋 CÁLCULO DE MATERIALES - METALDRYLL',
+      divider,
+      `🏠 Tipo: Tabique Sanitario RH`,
+      `📐 Área: ${area} m²`,
+      `📊 Desperdicio: ${wastePct}%`,
+      divider,
+      '📦 MATERIALES:',
+      materials,
+      divider,
+      '✨ Generado con Calculadora MetalDryll',
+      'https://drywalll-peru-calculadora.netlify.app/',
     ].join('\n');
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   };

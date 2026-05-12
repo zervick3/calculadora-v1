@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ervic Linares",
+    "cargo": "Asesor de Ventas",
+    "telefono": "+51 918 968 939",
+    "whatsapp": "+51 918 968 939",
+    "email": "ventas@metaldryll.com"
+  },
+  {
+    "id": 2,
+    "nombre": "Sede chimbote",
+    "cargo": "Asesor de Ventas",
+    "telefono": "+51 963 019 545",
+    "whatsapp": "+51 963 019 545",
+    "email": "ventas@metaldryll.com"
+  },
+  {
+    "id": 3,
+    "nombre": "Ricardo Ramirez",
+    "cargo": "Asesor de Ventas",
+    "telefono": "+51 919 542 981",
+    "whatsapp": "+51 919 542 981",
+    "email": "ventas@metaldryll.com"
+  },
+  {
+    "id": 4,
+    "nombre": "Jordan Almendras",
+    "cargo": "Asesor de Ventas",
+    "telefono": "+51 933 406 590",
+    "whatsapp": "+51 933 406 590",
+    "email": "ventas@metaldryll.com"
+  }
+]

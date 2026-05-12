@@ -74,10 +74,20 @@ export function CieloRasoView() {
   const results = useMemo(() => calcCieloRaso(area * (1 + wastePct / 100)), [area, wastePct]);
 
   const shareWhatsApp = () => {
+    const divider = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
+    const materials = results ? Object.entries(results).map(([k, v]) => `• ${k}: ${v} uds`).join('\n') : 'Sin resultados';
     const text = [
-      'Cielo Raso — ' + area + ' m²',
-      'Con ' + wastePct + '% desperdicio',
-      results ? Object.entries(results).map(([k, v]) => k + ': ' + v).join(', ') : 'Sin resultados',
+      '📋 CÁLCULO DE MATERIALES - METALDRYLL',
+      divider,
+      `🏠 Tipo: Cielo Raso`,
+      `📐 Área: ${area} m²`,
+      `📊 Desperdicio: ${wastePct}%`,
+      divider,
+      '📦 MATERIALES:',
+      materials,
+      divider,
+      '✨ Generado con Calculadora MetalDryll',
+      'https://drywalll-peru-calculadora.netlify.app/',
     ].join('\n');
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   };
