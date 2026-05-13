@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { ContactModal } from '../components/ContactModal/ContactModal';
+import { StoreFooter } from '../components/StoreFooter/StoreFooter';
 import styles from './AppShell.module.css';
 
 function IconMenu() {
@@ -296,6 +297,7 @@ export function AppShell() {
 
         <main className={styles.mainContent}>
           <Outlet />
+          <StoreFooter />
         </main>
       </div>
 

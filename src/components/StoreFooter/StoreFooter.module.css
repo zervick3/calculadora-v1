@@ -1,0 +1,223 @@
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  margin-top: 64px;
+  position: relative;
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0.95) 0%, rgba(15, 23, 42, 1) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3), transparent);
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px 36px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.headingIcon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  flex-shrink: 0;
+}
+
+.headingTitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: -0.01em;
+}
+
+.headingSub {
+  display: block;
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  animation: slideUp 0.5s ease backwards;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  background: rgba(20, 30, 50, 0.8);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.card:active {
+  transform: translateY(-1px);
+}
+
+.cardBar {
+  width: 4px;
+  flex-shrink: 0;
+  background: var(--accent-bar, #3b82f6);
+  align-self: stretch;
+  transition: width 0.3s ease;
+}
+
+.card:hover .cardBar {
+  width: 5px;
+}
+
+.cardContent {
+  flex: 1;
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.pin {
+  color: var(--accent-bar, #3b82f6);
+  display: flex;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .pin {
+  opacity: 1;
+}
+
+.address {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+}
+
+.ref {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #64748b;
+  font-style: italic;
+  padding-left: 12px;
+  border-left: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  align-items: center;
+}
+
+.metaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-bar, #3b82f6);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.metaLink:hover {
+  filter: brightness(1.2);
+  text-decoration: underline;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.metaLink svg,
+.metaItem svg {
+  flex-shrink: 0;
+}
+
+.bottom {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #475569;
+  font-size: 13px;
+}
+
+.bottom svg {
+  opacity: 0.4;
+  flex-shrink: 0;
+}

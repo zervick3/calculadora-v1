@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "ciudad": "Nuevo Chimbote",
+    "direccion": "AA.HH. 19 de Marzo, Mz. K, Lote 10",
+    "telefono": "+51 963 019 545",
+    "referencia": "Frente al mercado"
+  },
+  {
+    "id": 2,
+    "ciudad": "Chimbote",
+    "direccion": "Av. Buenos Aires 646, El Progreso",
+    "telefono": "+51 918 968 939",
+    "referencia": "Zona comercial"
+  },
+  {
+    "id": 3,
+    "ciudad": "Chimbote",
+    "direccion": "Av. Pardo 1185, Mz. I-J, Lote 25",
+    "telefono": "+51 919 542 981",
+    "referencia": "Entre Av. Aviación y Jr. Libertad"
+  }
+]
