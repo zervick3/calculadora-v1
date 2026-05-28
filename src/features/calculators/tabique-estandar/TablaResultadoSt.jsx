@@ -17,6 +17,7 @@ const ROWS = [
 export function TablaResultadoSt(props) {
   return (
     <div className={styles.wrap}>
+      <div className="tableScroll">
       <table className={styles.table}>
         <thead>
           <tr>
@@ -37,6 +38,7 @@ export function TablaResultadoSt(props) {
           ))}
         </tbody>
       </table>
+      </div>
       <p className={styles.note}>
         Valores redondeados al alza según tu criterio de obra. Ajusta factores en{' '}
         <code className={styles.code}>calcTabiqueEstandar.js</code> si tu sistema usa otros coeficientes.

@@ -8,9 +8,15 @@
   align-items: flex-start;
   justify-content: center;
   z-index: 2000;
-  padding: 20px;
+  padding: 8px;
   overflow-y: auto;
   animation: fadeIn 0.25s ease-out;
+}
+
+@media (min-width: 640px) {
+  .overlay {
+    padding: 20px;
+  }
 }
 
 @keyframes fadeIn {
@@ -92,10 +98,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 32px;
+  padding: 16px;
   background: linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
+}
+
+@media (min-width: 640px) {
+  .modalHeader {
+    padding: 24px 32px;
+  }
 }
 
 .headerLeft {
@@ -187,13 +199,19 @@
 }
 
 .formColumn {
-  padding: 24px 28px;
+  padding: 16px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+
+@media (min-width: 640px) {
+  .formColumn {
+    padding: 24px 28px;
+  }
 }
 
 .formColumn::-webkit-scrollbar { width: 4px; }
@@ -608,10 +626,16 @@
 .previewColumn {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
   border-left: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 24px 24px 24px 20px;
+  padding: 16px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+
+@media (min-width: 640px) {
+  .previewColumn {
+    padding: 24px 24px 24px 20px;
+  }
 }
 
 .previewColumn::-webkit-scrollbar { width: 4px; }

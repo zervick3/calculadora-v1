@@ -16,6 +16,7 @@ const ROWS = [
 export function TablaResultadoCieloRaso(props) {
   return (
     <div className={styles.wrap}>
+      <div className="tableScroll">
       <table className={styles.table}>
         <thead>
           <tr>
@@ -36,6 +37,7 @@ export function TablaResultadoCieloRaso(props) {
           ))}
         </tbody>
       </table>
+      </div>
       <p className={styles.note}>
         Valores redondeados al alza según tu criterio de obra. Ajusta factores en{' '}
         <code className={styles.code}>calcCieloRaso.js</code> si tu sistema usa otros coeficientes.

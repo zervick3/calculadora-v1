@@ -453,7 +453,13 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 12px;
+}
+
+@media (min-width: 640px) {
+  .mainArea {
+    padding: 20px;
+  }
 }
 
 .menuBtn {
@@ -497,13 +503,13 @@
 .budgetBtn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 6px;
+  padding: 10px 12px;
   background: linear-gradient(135deg, #1a4b84, #2563eb);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -520,16 +526,28 @@
   transform: translateY(0) scale(0.98);
 }
 
+@media (max-width: 480px) {
+  .budgetBtn span, .contactBtn span {
+    display: none;
+  }
+  .budgetBtn, .contactBtn {
+    padding: 10px;
+  }
+  .topBar {
+    gap: 8px;
+  }
+}
+
 .contactBtn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 6px;
+  padding: 10px 12px;
   background: linear-gradient(135deg, #22c55e, #16a34a);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;

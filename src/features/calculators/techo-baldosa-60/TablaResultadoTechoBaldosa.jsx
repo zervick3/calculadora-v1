@@ -15,6 +15,7 @@ const ROWS = [
 export function TablaResultadoTechoBaldosa(props) {
   return (
     <div className={styles.wrap}>
+      <div className="tableScroll">
       <table className={styles.table}>
         <thead>
           <tr>
@@ -35,6 +36,7 @@ export function TablaResultadoTechoBaldosa(props) {
           ))}
         </tbody>
       </table>
+      </div>
       <p className={styles.note}>
         Valores redondeados al alza según tu criterio de obra.
       </p>

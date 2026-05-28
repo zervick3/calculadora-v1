@@ -18,6 +18,7 @@ const ROWS = [
 export function TablaResultadoSuperboard(props) {
   return (
     <div className={styles.wrap}>
+      <div className="tableScroll">
       <table className={styles.table}>
         <thead>
           <tr>
@@ -38,6 +39,7 @@ export function TablaResultadoSuperboard(props) {
           ))}
         </tbody>
       </table>
+      </div>
       <p className={styles.note}>
         Valores redondeados al alza según tu criterio de obra. Ajusta factores en{' '}
         <code className={styles.code}>calcTabiqueSuperboard.js</code> si tu sistema usa otros coeficientes.

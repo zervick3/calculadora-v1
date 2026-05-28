@@ -41,6 +41,51 @@ button {
   cursor: pointer;
 }
 
-input {
+input, textarea, select {
   font-family: inherit;
+}
+
+/* ====== RESPONSIVE GLOBAL ====== */
+html {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  body {
+    background: linear-gradient(145deg, #6b92c9 0%, #a8c4e8 35%, #d4e4f7 100%);
+    background-attachment: fixed;
+  }
+
+  :root {
+    --radius-lg: 12px;
+    --radius-md: 10px;
+    --radius-sm: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  input, textarea, select, button {
+    font-size: 16px !important; /* prevents iOS zoom on focus */
+  }
+}
+
+/* Scroll horizontal para tablas en móvil */
+.tableScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -4px;
+  padding: 0 4px;
+}
+
+.tableScroll table {
+  min-width: 320px;
 }
