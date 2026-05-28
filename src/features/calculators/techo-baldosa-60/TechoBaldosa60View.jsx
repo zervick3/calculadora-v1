@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { calcTechoBaldosa60 } from './calcTechoBaldosa60';
 import { TablaResultadoTechoBaldosa } from './TablaResultadoTechoBaldosa';
 import { TechoBaldosaPreviewSvg } from '../techo-baldosa-shared/TechoBaldosaPreviewSvg';
+import { ShareButton } from '../shared/ShareButton/ShareButton';
 import styles from './TechoBaldosa60View.module.css';
 
 const TILE_LENGTH = 0.6;
@@ -325,13 +326,22 @@ export function TechoBaldosa60View() {
           </div>
 
           <div className={styles.actions}>
+            <ShareButton
+              calcName="Techo Baldosa 60×60"
+              area={netArea}
+              wastePct={wastePct}
+              results={results}
+              length={length}
+              width={width}
+              netArea={netArea}
+            />
             <button type="button" className={styles.btnWa} onClick={shareWhatsApp}>
               <IconWa />
-              Compartir por WhatsApp
+              WhatsApp
             </button>
             <button type="button" className={styles.btnGhost} onClick={copyLink}>
               <IconShare />
-              {copyDone ? '¡Enlace copiado!' : 'Copiar enlace'}
+              {copyDone ? '¡Copiado!' : 'Enlace'}
             </button>
           </div>
         </div>

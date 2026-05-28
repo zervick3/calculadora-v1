@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { calcCieloRaso, PLANCHA_FACTOR_M2 } from './calcCieloRaso';
 import { TablaResultadoCieloRaso } from './TablaResultadoCieloRaso';
+import { ShareButton } from '../shared/ShareButton/ShareButton';
 import styles from './CieloRasoView.module.css';
 
 function IconRuler() {
@@ -233,13 +234,19 @@ export function CieloRasoView() {
           </div>
 
           <div className={styles.actions}>
+            <ShareButton
+              calcName="Cielo Raso"
+              area={area}
+              wastePct={wastePct}
+              results={results}
+            />
             <button type="button" className={styles.btnWa} onClick={shareWhatsApp}>
               <IconWa />
-              Compartir por WhatsApp
+              WhatsApp
             </button>
             <button type="button" className={styles.btnGhost} onClick={copyLink}>
               <IconShare />
-              {copyDone ? '¡Enlace copiado!' : 'Copiar enlace'}
+              {copyDone ? '¡Copiado!' : 'Enlace'}
             </button>
           </div>
         </div>

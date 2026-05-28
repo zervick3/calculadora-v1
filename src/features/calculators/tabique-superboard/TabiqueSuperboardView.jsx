@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { calcTabiqueSuperboard, PLANCHA_FACTOR_M2 } from './calcTabiqueSuperboard';
 import { TablaResultadoSuperboard } from './TablaResultadoSuperboard';
+import { ShareButton } from '../shared/ShareButton/ShareButton';
 import styles from './TabiqueSuperboardView.module.css';
 
 function IconRuler() {
@@ -234,13 +235,19 @@ export function TabiqueSuperboardView() {
           </div>
 
           <div className={styles.actions}>
+            <ShareButton
+              calcName="Superboard"
+              area={area}
+              wastePct={wastePct}
+              results={results}
+            />
             <button type="button" className={styles.btnWa} onClick={shareWhatsApp}>
               <IconWa />
-              Compartir por WhatsApp
+              WhatsApp
             </button>
             <button type="button" className={styles.btnGhost} onClick={copyLink}>
               <IconShare />
-              {copyDone ? '¡Enlace copiado!' : 'Copiar enlace'}
+              {copyDone ? '¡Copiado!' : 'Enlace'}
             </button>
           </div>
         </div>

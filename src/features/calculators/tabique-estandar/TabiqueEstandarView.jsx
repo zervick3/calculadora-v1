@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { calcTabiqueEstandar, PLANCHA_FACTOR_M2 } from './calcTabiqueEstandar';
 import { TablaResultadoSt } from './TablaResultadoSt';
 import { InstallationDiagram } from './InstallationDiagram';
+import { ShareButton } from '../shared/ShareButton/ShareButton';
 import styles from './TabiqueEstandarView.module.css';
 
 function IconRuler() {
@@ -238,13 +239,19 @@ export function TabiqueEstandarView() {
           </div>
 
           <div className={styles.actions}>
+            <ShareButton
+              calcName="Tabique Estándar"
+              area={area}
+              wastePct={wastePct}
+              results={results}
+            />
             <button type="button" className={styles.btnWa} onClick={shareWhatsApp}>
               <IconWa />
-              Compartir por WhatsApp
+              WhatsApp
             </button>
             <button type="button" className={styles.btnGhost} onClick={copyLink}>
               <IconShare />
-              {copyDone ? '¡Enlace copiado!' : 'Copiar enlace'}
+              {copyDone ? '¡Copiado!' : 'Enlace'}
             </button>
           </div>
         </div>

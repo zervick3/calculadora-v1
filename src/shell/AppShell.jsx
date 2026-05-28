@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { BudgetModal } from '../components/BudgetModal/BudgetModal';
 import { ContactModal } from '../components/ContactModal/ContactModal';
 import { StoreFooter } from '../components/StoreFooter/StoreFooter';
 import styles from './AppShell.module.css';
@@ -125,6 +126,19 @@ function IconSettings() {
   );
 }
 
+function IconBudget() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+      <path d="M14 2v6h6" />
+      <path d="M16 13H8" />
+      <path d="M16 17H8" />
+      <path d="M10 9H8" />
+      <path d="M9 13v4" />
+    </svg>
+  );
+}
+
 function IconContact() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -164,6 +178,7 @@ export function AppShell() {
   const [expandedCategories, setExpandedCategories] = useState({ muros: true, techos: true });
   const [searchQuery, setSearchQuery] = useState('');
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isBudgetModalOpen, setIsBudgetModalOpen] = useState(false);
 
   const toggleCategory = (key) => {
     setExpandedCategories((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -289,6 +304,10 @@ export function AppShell() {
             <IconMenu />
           </button>
           <span className={styles.pageTitle}>Metal Dryll</span>
+          <button className={styles.budgetBtn} onClick={() => setIsBudgetModalOpen(true)} aria-label="Presupuesto">
+            <IconBudget />
+            <span>Presupuesto</span>
+          </button>
           <button className={styles.contactBtn} onClick={() => setIsContactModalOpen(true)} aria-label="Contactar">
             <IconContact />
             <span>Contacto</span>
@@ -301,6 +320,7 @@ export function AppShell() {
         </main>
       </div>
 
+      <BudgetModal isOpen={isBudgetModalOpen} onClose={() => setIsBudgetModalOpen(false)} />
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
     </div>
   );
