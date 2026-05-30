@@ -75,6 +75,42 @@
   gap: 20px;
 }
 
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .inner {
+    padding: 32px 16px 28px;
+  }
+
+  .cardContent {
+    padding: 14px 16px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .inner {
+    padding: 24px 12px 24px;
+  }
+
+  .heading {
+    margin-bottom: 24px;
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
 .card {
   position: relative;
   display: flex;
